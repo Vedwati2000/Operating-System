@@ -6,7 +6,7 @@ function BaseConverter() {
   const [result, setResult] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/conversions")
+    fetch("https://backend-system-um4y.onrender.com/api/conversions")
       .then((res) => res.json())
       .then((data) => setResult(data))
       .catch((err) => console.error(err));
@@ -49,7 +49,7 @@ function BaseConverter() {
       };
 
    
-      fetch("http://localhost:3000/api/conversions", {
+      fetch("https://backend-system-um4y.onrender.com/api/conversions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newConv),
@@ -66,7 +66,7 @@ function BaseConverter() {
 
   function handleDelete(id) {
     if (window.confirm("Are you sure you want to delete this conversion?")) {
-      fetch(`http://localhost:3000/api/conversions/${id}`, {
+      fetch(`https://backend-system-um4y.onrender.com/api/conversions/${id}`, {
         method: "DELETE",
       })
         .then((res) => {

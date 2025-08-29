@@ -10,7 +10,7 @@ function LoginPage() {
 
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/login")
+    fetch("https://backend-system-um4y.onrender.com/api/login")
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error(err));
@@ -18,7 +18,7 @@ function LoginPage() {
 
 
   function handleLogin() {
-    fetch("http://localhost:3000/api/login", {
+    fetch("https://backend-system-um4y.onrender.com/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),
@@ -37,7 +37,7 @@ function LoginPage() {
   
 
   function handleDelete(id) {
-    fetch(`http://localhost:3000/api/login/${id}`, { method: "DELETE" })
+    fetch(`https://backend-system-um4y.onrender.com/api/login/${id}`, { method: "DELETE" })
       .then(() => {
         setUsers(users.filter((u) => u._id !== id));
       })

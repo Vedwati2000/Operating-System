@@ -7,7 +7,7 @@ function ChatBoot() {
 
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/chats")
+    fetch("https://backend-system-um4y.onrender.com/api/chats")
       .then((res) => res.json())
       .then((data) => setChatList(data))
       .catch((err) => console.error(err));
@@ -32,7 +32,7 @@ function ChatBoot() {
  
     const newChat = { chat: `You: ${chatBoot} | Boot: ${output}` };
 
-    fetch("http://localhost:3000/api/chats", {
+    fetch("https://backend-system-um4y.onrender.com/api/chats", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newChat),
@@ -48,7 +48,7 @@ function ChatBoot() {
  
   
   function handleDelete(id) {
-    fetch(`http://localhost:3000/api/chats/${id}`, { method: "DELETE" })
+    fetch(`https://backend-system-um4y.onrender.com/api/chats/${id}`, { method: "DELETE" })
       .then(() => setChatList(chatList.filter((item) => item._id !== id)))
       .catch((err) => console.error(err));
   }

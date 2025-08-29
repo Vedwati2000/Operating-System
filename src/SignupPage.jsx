@@ -27,7 +27,7 @@ function SignupPage() {
       return;
     }
   
-    const response = await fetch("http://localhost:3000/api/signup", {
+    const response = await fetch("https://backend-system-um4y.onrender.com/api/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password, conpassword: conPassword })
@@ -41,13 +41,13 @@ function SignupPage() {
   
 
   async function handleDelete(id) {
-    await fetch(`http://localhost:3000/api/signup/${id}`, { method: "DELETE" });
+    await fetch(`https://backend-system-um4y.onrender.com/api/signup/${id}`, { method: "DELETE" });
     setUsers(users.filter(user => user._id !== id)); 
   }
   
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/signup")
+    fetch("https://backend-system-um4y.onrender.com/api/signup")
       .then(res => res.json())
       .then(data => setUsers(data));
   }, []);
